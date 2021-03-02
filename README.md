@@ -7,6 +7,7 @@ How to set up:
 2. Install [Discordia](https://github.com/SinisterRectus/Discordia) in this repo
 3. Put your client token in a file called `client_token`
 4. Run the bot with `luvit main.lua client_token`
-5. ???
-6. Profit!
+5. Invite the bot
+6. ???
+7. Profit!
 
