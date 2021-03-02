@@ -9,11 +9,11 @@ local function readToken()
 end
 
 client:on('ready', function()
-	print('Ready to ATBEN, signed in as:'.. client.user.username)
+  print('Ready to ATBEN, signed in as:'.. client.user.username)
 end)
 
 client:on('messageCreate', function(message)
-  if message.content:find("atben") or message.content:find("ATBEN") then
+  if message.content:lower():find("atben") then
     message.channel:send('<@400073201700569098>')
   end
 end)
