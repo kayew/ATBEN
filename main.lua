@@ -16,8 +16,8 @@ end)
 
 client:on('messageCreate', function(message)
   -- Converts message to all lowercase, looks for "atben". If true, ping Ben.
-  if message.content:lower():find("atben") then
-    message.channel:send('<@400073201700569098>')
+  if message.content:lower():find("atben") and message.author.id ~= client.user.id then
+    message.channel:send('<@400073201700569098>' .. message.content:sub(6, #message.content))
   end
 end)
 
