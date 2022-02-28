@@ -5,7 +5,7 @@ local client = discordia.Client()
 local function readToken()
   -- Takes 2nd argument of command line (a file) and returns bot token
   local file = io.open(args[2], "r")
-  local token = file:read()
+  local token = file:read("*l")
   file:close()
   return token
 end
@@ -17,7 +17,7 @@ end)
 client:on('messageCreate', function(message)
   -- Converts message to all lowercase, looks for "atben". If true, ping Ben.
   if message.content:lower():find("atben") and message.author.id ~= client.user.id then
-    message.channel:send('<@400073201700569098>' .. message.content:sub(6, #message.content))
+    message:reply('<@400073201700569098>' .. message.content:sub(6, #message.content))
   end
 end)
 
